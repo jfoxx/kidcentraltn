@@ -13,6 +13,43 @@ footer .footer p {
   margin: 0;
 }
 
+/* Colored navigation bars in footer */
+footer .footer ul:first-of-type {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+footer .footer ul:first-of-type > li {
+  border-left: 6px solid;
+  padding-left: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+footer .footer ul:first-of-type > li:nth-child(1) {
+  border-left-color: var(--kct-blue);
+}
+
+footer .footer ul:first-of-type > li:nth-child(2) {
+  border-left-color: var(--kct-red);
+}
+
+footer .footer ul:first-of-type > li:nth-child(3) {
+  border-left-color: var(--kct-orange);
+}
+
+footer .footer ul:first-of-type > li:nth-child(4) {
+  border-left-color: var(--kct-purple);
+}
+
+footer .footer ul:first-of-type > li:nth-child(5) {
+  border-left-color: var(--kct-green);
+}
+
 @media (width >= 900px) {
   footer .footer > div {
     padding: 40px 32px 24px;

@@ -12,16 +12,26 @@
 
 :root {
   /* colors */
-  --background-color: white;
+
+  --kct-blue: #0087b8;
+  --kct-red: #ed1c24;
+  --kct-green: #4aa608;
+  --kct-purple: #8d419d;
+  --kct-orange: #d97b08;
+  --kct-pink: #e6007e;
+  --background-color: #f9f9f9;
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --link-color: var(--kct-blue);
+  --link-hover-color: var(--kct-red);
+
+
+
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: helvetica, arial, sans-serif;
+  --heading-font-family: 'Montserrat', sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -37,7 +47,7 @@
   --heading-font-size-xs: 22px;
 
   /* nav heights */
-  --nav-height: 64px;
+  --nav-height: 165px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
 }
@@ -261,4 +271,24 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+
+/* Featured Services or pink heading sections */
+main .section.featured h2,
+main .section h2.featured {
+  background-color: var(--kct-pink);
+  color: white;
+  padding: 12px 24px;
+  display: inline-block;
+  margin-left: -24px;
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+}
+
+@media (width >= 900px) {
+  main .section.featured h2,
+  main .section h2.featured {
+    margin-left: -32px;
+    padding: 12px 32px;
+  }
 }

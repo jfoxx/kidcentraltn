@@ -190,12 +190,15 @@ export default async function decorate(block) {
     if (section) section.classList.add(`nav-${c}`);
   });
 
-  const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
-  }
+  // Remove button classes from all links in the header
+  nav.querySelectorAll('a.button').forEach((link) => {
+    link.classList.remove('button');
+  });
+
+  // Remove button-container classes from parent elements
+  nav.querySelectorAll('.button-container').forEach((container) => {
+    container.classList.remove('button-container');
+  });
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {

@@ -5,6 +5,10 @@ function updateActiveSlide(slide) {
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
   block.dataset.activeSlide = slideIndex;
 
+  // Get the theme of the active slide
+  const activeTheme = slide.dataset.theme;
+  block.dataset.activeTheme = activeTheme;
+
   const slides = block.querySelectorAll('.carousel-slide');
 
   slides.forEach((aSlide, idx) => {
@@ -75,6 +79,11 @@ function createSlide(row, slideIndex, carouselId) {
   slide.dataset.slideIndex = slideIndex;
   slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
   slide.classList.add('carousel-slide');
+
+  // Add theme color classes cycling through orange, purple, red, green
+  const themes = ['orange', 'purple', 'red', 'green'];
+  const theme = themes[slideIndex % themes.length];
+  slide.dataset.theme = theme;
 
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
     column.classList.add(`carousel-slide-${colIdx === 0 ? 'image' : 'content'}`);
